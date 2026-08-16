@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<!--
+    Define que este documento utiliza HTML5.
+-->
+
+<html lang="pt-BR">
+
+<head>
+
+    <!--
+        Define a codificação dos caracteres.
+
+        UTF-8 permite utilizar caracteres como:
+        á, ç, ã, ê etc.
+    -->
+    <meta charset="UTF-8">
+
+    <!--
+        Faz com que a página seja adaptável
+        a diferentes tamanhos de tela.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        O bloco "title" poderá ser substituído
+        pelas páginas que herdarem este template.
+    -->
+    <title>
+        {% block title %}
+            DevTrack
+        {% endblock %}
+    </title>
+
+    <!--
+        Importamos nosso arquivo CSS.
+
+        url_for() é uma função do Flask utilizada
+        para gerar corretamente a URL de recursos
+        estáticos.
+    -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <!--
+        Área principal da aplicação.
+    -->
+    <main class="container">
+
+        <!--
+            Cada página poderá inserir seu conteúdo
+            dentro deste bloco.
+        -->
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+</body>
+
+</html>
