@@ -1,0 +1,515 @@
+{% extends "base.html" %}
+
+{% block title %}
+    DevTrack | Dashboard
+{% endblock %}
+
+
+{% block content %}
+
+<!--
+    =====================================================
+    DASHBOARD
+    =====================================================
+
+    Estrutura principal do painel.
+-->
+
+<div class="dashboard-layout">
+
+
+    <!--
+        =================================================
+        SIDEBAR
+        =================================================
+    -->
+
+    <aside class="sidebar">
+
+        <!-- Identidade da aplicação -->
+        <div class="sidebar-brand">
+
+            <span class="brand-mark">
+                D
+            </span>
+
+            <span class="brand-name">
+                DevTrack
+            </span>
+
+        </div>
+
+
+        <!-- Navegação principal -->
+        <nav class="sidebar-navigation">
+
+            <a
+                href="{{ url_for('dashboard.dashboard') }}"
+                class="nav-item active"
+            >
+                Dashboard
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+                Estudos
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+                Projetos
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+                Metas
+            </a>
+
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+                Atividades
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!--
+        =================================================
+        CONTEÚDO PRINCIPAL
+        =================================================
+    -->
+
+    <main class="dashboard-content">
+
+
+        <!-- Cabeçalho -->
+        <header class="dashboard-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    VISÃO GERAL
+                </span>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p>
+                    Acompanhe sua evolução como desenvolvedor.
+                </p>
+
+            </div>
+
+
+            <div class="user-area">
+
+                <div class="avatar">
+                    BW
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!--
+            =================================================
+            CARDS DE MÉTRICAS
+            =================================================
+        -->
+
+        <section class="metrics-grid">
+
+
+            <!-- Horas de estudo -->
+            <article class="metric-card">
+
+                <span class="metric-label">
+                    Horas estudadas
+                </span>
+
+                <strong class="metric-value">
+                    {{ metrics.study_hours }}h
+                </strong>
+
+                <span class="metric-description">
+                    Este mês
+                </span>
+
+            </article>
+
+
+            <!-- Projetos -->
+            <article class="metric-card">
+
+                <span class="metric-label">
+                    Projetos
+                </span>
+
+                <strong class="metric-value">
+                    {{ metrics.projects }}
+                </strong>
+
+                <span class="metric-description">
+                    Em desenvolvimento
+                </span>
+
+            </article>
+
+
+            <!-- Metas -->
+            <article class="metric-card">
+
+                <span class="metric-label">
+                    Metas concluídas
+                </span>
+
+                <strong class="metric-value">
+                    {{ metrics.completed_goals }}
+                </strong>
+
+                <span class="metric-description">
+                    Este mês
+                </span>
+
+            </article>
+
+
+            <!-- Streak -->
+            <article class="metric-card">
+
+                <span class="metric-label">
+                    Streak atual
+                </span>
+
+                <strong class="metric-value">
+                    {{ metrics.current_streak }}
+                </strong>
+
+                <span class="metric-description">
+                    dias consecutivos
+                </span>
+
+            </article>
+
+
+        </section>
+
+
+        <!--
+            =================================================
+            ÁREA INFERIOR
+            =================================================
+        -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- Progresso -->
+            <article class="dashboard-card progress-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            DESENVOLVIMENTO
+                        </span>
+
+                        <h2>
+                            Progresso semanal
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-content">
+
+                    <div class="progress-info">
+
+                        <strong>
+                            72%
+                        </strong>
+
+                        <span>
+                            da meta semanal
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress-bar-fill"
+                            style="width: 72%;"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Projetos -->
+            <article class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PROJETOS
+                        </span>
+
+                        <h2>
+                            Projetos ativos
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-list">
+
+
+                    <div class="project-item">
+
+                        <div>
+
+                            <strong>
+                                DevTrack
+                            </strong>
+
+                            <span>
+                                Python
+                            </span>
+
+                        </div>
+
+                        <span class="project-status">
+                            32%
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-item">
+
+                        <div>
+
+                            <strong>
+                                Nexus Core
+                            </strong>
+
+                            <span>
+                                Python / Web
+                            </span>
+
+                        </div>
+
+                        <span class="project-status">
+                            68%
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-item">
+
+                        <div>
+
+                            <strong>
+                                Méd
+                            </strong>
+
+                            <span>
+                                Python
+                            </span>
+
+                        </div>
+
+                        <span class="project-status">
+                            41%
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+        <!--
+            =================================================
+            ATIVIDADES RECENTES
+            =================================================
+        -->
+
+        <section class="dashboard-card activity-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        HISTÓRICO
+                    </span>
+
+                    <h2>
+                        Atividades recentes
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity-list">
+
+
+                <div class="activity-item">
+
+                    <div class="activity-marker"></div>
+
+                    <div>
+
+                        <strong>
+                            Commit realizado
+                        </strong>
+
+                        <span>
+                            DevTrack — há 2 horas
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                    <div class="activity-marker"></div>
+
+                    <div>
+
+                        <strong>
+                            Estudo concluído
+                        </strong>
+
+                        <span>
+                            Python — há 5 horas
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                    <div class="activity-marker"></div>
+
+                    <div>
+
+                        <strong>
+                            Meta atualizada
+                        </strong>
+
+                        <span>
+                            SQL — ontem
+                        </span>
+
+                    </div>
+                    <!--
+    =================================================
+    TECNOLOGIAS
+    =================================================
+-->
+
+<section class="dashboard-card technologies-card">
+
+    <div class="card-header">
+
+        <div>
+
+            <span class="eyebrow">
+                STACK
+            </span>
+
+            <h2>
+                Tecnologias em estudo
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="technology-list">
+
+        <span class="technology-tag">
+            Python
+        </span>
+
+        <span class="technology-tag">
+            SQL
+        </span>
+
+        <span class="technology-tag">
+            Flask
+        </span>
+
+        <span class="technology-tag">
+            HTML
+        </span>
+
+        <span class="technology-tag">
+            CSS
+        </span>
+
+        <span class="technology-tag">
+            Docker
+        </span>
+
+    </div>
+    
+
+</section>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+{% endblock %}
