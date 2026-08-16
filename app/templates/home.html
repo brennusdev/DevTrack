@@ -1,0 +1,46 @@
+<!--
+    A página inicial herda toda a estrutura
+    definida em base.html.
+-->
+{% extends "base.html" %}
+
+
+<!--
+    Substituímos o título padrão.
+-->
+{% block title %}
+    DevTrack | Início
+{% endblock %}
+
+
+<!--
+    Inserimos o conteúdo principal da página.
+-->
+{% block content %}
+
+<section class="hero">
+
+    <!--
+        Título principal da aplicação.
+    -->
+    <h1>DevTrack</h1>
+
+    <!--
+        Descrição resumida do objetivo do sistema.
+    -->
+    <p>
+        Plataforma para acompanhar, organizar e analisar
+        a evolução do desenvolvedor.
+    </p>
+
+    <!--
+        Este botão ainda não possui uma funcionalidade.
+        Ele será conectado ao dashboard em versões futuras.
+    -->
+    <button class="primary-button">
+        Começar acompanhamento
+    </button>
+
+</section>
+
+{% endblock %}
