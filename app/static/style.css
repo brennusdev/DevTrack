@@ -1,0 +1,214 @@
+/*
+    =====================================================
+    DEVTRACK - ESTILOS GLOBAIS
+    =====================================================
+
+    Este arquivo contém os estilos básicos da aplicação.
+
+    Nas próximas versões o CSS será dividido em componentes
+    menores conforme a interface crescer.
+*/
+
+
+/*
+    -----------------------------------------------------
+    RESET BÁSICO
+    -----------------------------------------------------
+
+    O box-sizing facilita o cálculo das dimensões
+    dos elementos.
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+
+/*
+    -----------------------------------------------------
+    BODY
+    -----------------------------------------------------
+
+    Define os estilos gerais da página.
+*/
+
+body {
+    /*
+        Remove a margem padrão adicionada pelo navegador.
+    */
+    margin: 0;
+
+    /*
+        Define a fonte principal da aplicação.
+    */
+    font-family: Arial, Helvetica, sans-serif;
+
+    /*
+        Cor de fundo da aplicação.
+    */
+    background-color: #f4f7fb;
+
+    /*
+        Cor padrão do texto.
+    */
+    color: #1f2937;
+}
+
+
+/*
+    -----------------------------------------------------
+    CONTAINER
+    -----------------------------------------------------
+
+    Controla a largura máxima do conteúdo.
+*/
+
+.container {
+    /*
+        Impede que o conteúdo fique excessivamente
+        largo em monitores grandes.
+    */
+    max-width: 1200px;
+
+    /*
+        Centraliza horizontalmente o conteúdo.
+    */
+    margin: 0 auto;
+
+    /*
+        Espaçamento interno.
+    */
+    padding: 40px 20px;
+}
+
+
+/*
+    -----------------------------------------------------
+    HERO
+    -----------------------------------------------------
+
+    Área principal da página inicial.
+*/
+
+.hero {
+    /*
+        Centraliza o conteúdo.
+    */
+    text-align: center;
+
+    /*
+        Cria espaçamento vertical.
+    */
+    padding: 100px 20px;
+}
+
+
+/*
+    Título principal.
+*/
+
+.hero h1 {
+    /*
+        Tamanho do título.
+    */
+    font-size: 56px;
+
+    /*
+        Remove margem superior padrão.
+    */
+    margin-top: 0;
+
+    /*
+        Espaçamento inferior.
+    */
+    margin-bottom: 20px;
+}
+
+
+/*
+    Texto descritivo.
+*/
+
+.hero p {
+    /*
+        Define uma largura confortável para leitura.
+    */
+    max-width: 650px;
+
+    /*
+        Centraliza o parágrafo.
+    */
+    margin: 0 auto 30px;
+
+    /*
+        Aumenta a legibilidade.
+    */
+    line-height: 1.6;
+
+    /*
+        Tamanho do texto.
+    */
+    font-size: 18px;
+}
+
+
+/*
+    -----------------------------------------------------
+    BOTÃO PRINCIPAL
+    -----------------------------------------------------
+*/
+
+.primary-button {
+    /*
+        Remove a borda padrão.
+    */
+    border: none;
+
+    /*
+        Espaçamento interno.
+    */
+    padding: 14px 24px;
+
+    /*
+        Arredonda os cantos.
+    */
+    border-radius: 8px;
+
+    /*
+        Cor do botão.
+    */
+    background-color: #2563eb;
+
+    /*
+        Cor do texto.
+    */
+    color: white;
+
+    /*
+        Tamanho da fonte.
+    */
+    font-size: 16px;
+
+    /*
+        Indica que o elemento pode ser clicado.
+    */
+    cursor: pointer;
+
+    /*
+        Cria uma transição suave para efeitos
+        futuros de interação.
+    */
+    transition: 0.2s ease;
+}
+
+
+/*
+    Quando o usuário passa o mouse sobre o botão.
+*/
+
+.primary-button:hover {
+    /*
+        Escurece levemente o botão.
+    */
+    background-color: #1d4ed8;
+}
