@@ -212,3 +212,733 @@ body {
     */
     background-color: #1d4ed8;
 }
+/*
+=========================================================
+DASHBOARD
+=========================================================
+*/
+
+
+/*
+---------------------------------------------------------
+LAYOUT PRINCIPAL
+---------------------------------------------------------
+*/
+
+.dashboard-layout {
+
+    /*
+        Utilizamos CSS Grid para dividir a aplicação
+        em duas áreas principais:
+
+        sidebar | conteúdo
+    */
+    display: grid;
+
+    grid-template-columns: 240px 1fr;
+
+    min-height: 100vh;
+
+}
+
+
+/*
+---------------------------------------------------------
+SIDEBAR
+---------------------------------------------------------
+*/
+
+.sidebar {
+
+    /*
+        Fundo branco para criar contraste
+        com o conteúdo principal.
+    */
+    background-color: #ffffff;
+
+    /*
+        Espaçamento interno.
+    */
+    padding: 30px 20px;
+
+    /*
+        Linha separadora.
+    */
+    border-right: 1px solid #e5e7eb;
+
+}
+
+
+/*
+---------------------------------------------------------
+MARCA
+---------------------------------------------------------
+*/
+
+.sidebar-brand {
+
+    /*
+        Coloca o símbolo e o nome lado a lado.
+    */
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.brand-mark {
+
+    /*
+        Pequeno quadrado utilizado como
+        identidade visual.
+    */
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #2563eb;
+
+    color: #ffffff;
+
+    font-weight: bold;
+
+}
+
+
+.brand-name {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+
+/*
+---------------------------------------------------------
+NAVEGAÇÃO
+---------------------------------------------------------
+*/
+
+.sidebar-navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.nav-item {
+
+    /*
+        Remove o sublinhado padrão dos links.
+    */
+    text-decoration: none;
+
+    color: #6b7280;
+
+    padding: 12px 14px;
+
+    border-radius: 8px;
+
+    transition: 0.2s ease;
+
+}
+
+
+.nav-item:hover {
+
+    background-color: #f3f4f6;
+
+    color: #111827;
+
+}
+
+
+.nav-item.active {
+
+    background-color: #eff6ff;
+
+    color: #2563eb;
+
+    font-weight: 600;
+
+}
+
+
+/*
+---------------------------------------------------------
+CONTEÚDO
+---------------------------------------------------------
+*/
+
+.dashboard-content {
+
+    padding: 40px;
+
+    min-width: 0;
+
+}
+
+
+/*
+---------------------------------------------------------
+HEADER
+---------------------------------------------------------
+*/
+
+.dashboard-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.dashboard-header h1 {
+
+    margin: 5px 0 8px;
+
+    font-size: 36px;
+
+}
+
+
+.dashboard-header p {
+
+    margin: 0;
+
+    color: #6b7280;
+
+}
+
+
+/*
+---------------------------------------------------------
+EYEBROW
+---------------------------------------------------------
+*/
+
+.eyebrow {
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #6b7280;
+
+}
+
+
+/*
+---------------------------------------------------------
+AVATAR
+---------------------------------------------------------
+*/
+
+.avatar {
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #e5e7eb;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+/*
+---------------------------------------------------------
+MÉTRICAS
+---------------------------------------------------------
+*/
+
+.metrics-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.metric-card {
+
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 24px;
+
+}
+
+
+.metric-label {
+
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.metric-value {
+
+    display: block;
+
+    font-size: 32px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.metric-description {
+
+    color: #9ca3af;
+
+    font-size: 13px;
+
+}
+
+
+/*
+---------------------------------------------------------
+GRID INFERIOR
+---------------------------------------------------------
+*/
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.dashboard-card {
+
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 24px;
+
+}
+
+
+.card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+}
+
+
+.card-header h2 {
+
+    margin: 6px 0 0;
+
+    font-size: 20px;
+
+}
+
+
+/*
+---------------------------------------------------------
+PROGRESSO
+---------------------------------------------------------
+*/
+
+.progress-info {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.progress-info strong {
+
+    font-size: 36px;
+
+}
+
+
+.progress-info span {
+
+    color: #6b7280;
+
+}
+
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 10px;
+
+    background-color: #e5e7eb;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+}
+
+
+.progress-bar-fill {
+
+    height: 100%;
+
+    background-color: #2563eb;
+
+    border-radius: inherit;
+
+}
+
+
+/*
+---------------------------------------------------------
+PROJETOS
+---------------------------------------------------------
+*/
+
+.project-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.project-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #f3f4f6;
+
+}
+
+
+.project-item:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.project-item strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+}
+
+
+.project-item span {
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+.project-status {
+
+    font-weight: 700;
+
+    color: #2563eb !important;
+
+}
+
+
+/*
+---------------------------------------------------------
+ATIVIDADES
+---------------------------------------------------------
+*/
+
+.activity-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.activity-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #f3f4f6;
+
+}
+
+
+.activity-item:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.activity-marker {
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background-color: #2563eb;
+
+}
+
+
+.activity-item strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+}
+
+
+.activity-item span {
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+/*
+---------------------------------------------------------
+RESPONSIVIDADE
+---------------------------------------------------------
+*/
+
+@media (max-width: 1000px) {
+
+    .metrics-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .dashboard-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .sidebar {
+
+        border-right: none;
+
+        border-bottom: 1px solid #e5e7eb;
+
+    }
+
+
+    .sidebar-navigation {
+
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard-content {
+
+        padding: 20px;
+
+    }
+
+
+    .metrics-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .dashboard-header {
+
+        align-items: flex-start;
+
+    }
+
+
+    .dashboard-header h1 {
+
+        font-size: 28px;
+
+    }
+
+}
+.primary-button {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    border: none;
+
+    padding: 14px 24px;
+
+    border-radius: 8px;
+
+    background-color: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.primary-button:hover {
+
+    background-color: #1d4ed8;
+
+}
+/*
+---------------------------------------------------------
+TECNOLOGIAS
+---------------------------------------------------------
+*/
+
+.technologies-card {
+
+    margin-bottom: 20px;
+
+}
+
+
+.technology-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+.technology-tag {
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    background-color: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
