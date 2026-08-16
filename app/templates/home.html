@@ -37,10 +37,60 @@
         Este botão ainda não possui uma funcionalidade.
         Ele será conectado ao dashboard em versões futuras.
     -->
-    <button class="primary-button">
-        Começar acompanhamento
-    </button>
+    <a
+    href="{{ url_for('dashboard.dashboard') }}"
+    class="primary-button"
+>
+    Acessar Dashboard
+</a>
+<div class="project-list">
 
+    {% for project in projects %}
+
+        <div class="project-item">
+
+            <div>
+
+                <strong>
+                    {{ project.name }}
+                </strong>
+
+                <span>
+                    {{ project.technology }}
+                </span>
+
+            </div>
+
+            <span class="project-status">
+                {{ project.progress }}%
+            </span>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+<div class="technology-list">
+
+    {% for technology in technologies %}
+
+        <span class="technology-tag">
+            {{ technology }}
+        </span>
+
+    {% endfor %}
+
+</div><div class="technology-list">
+
+    {% for technology in technologies %}
+
+        <span class="technology-tag">
+            {{ technology }}
+        </span>
+
+    {% endfor %}
+
+</div>
 </section>
 
 {% endblock %}
