@@ -14,9 +14,13 @@ O uso de uma factory facilita futuramente:
 """
 
 from flask import Flask
-
-
+from app.routes.projects import projects_bp
+from app.routes.home import home_bp
+from app.routes.dashoboard import dashboard_bp
+from app.routes.projects import projects_bp
 from app.config import Config
+
+
 
 
 def create_app():
