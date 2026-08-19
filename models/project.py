@@ -81,3 +81,4 @@ class Project(db.Model):
             f"id={self.id} "
             f"name={self.name!r}>"
         )
+        
