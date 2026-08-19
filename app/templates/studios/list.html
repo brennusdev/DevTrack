@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    DevTrack | Estudos
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-container">
+
+    <header class="page-header">
+
+        <div>
+
+            <span class="eyebrow">
+                APRENDIZADO
+            </span>
+
+            <h1>
+                Estudos
+            </h1>
+
+            <p>
+                Registre e acompanhe suas sessões de estudo.
+            </p>
+
+        </div>
+
+
+        <a
+            href="{{ url_for('studies.create_study') }}"
+            class="primary-button"
+        >
+            Novo estudo
+        </a>
+
+    </header>
+
+
+    <section class="data-card">
+
+        {% if studies %}
+
+            <div class="study-list">
+
+                {% for study in studies %}
+
+                    <article class="study-item">
+
+                        <div>
+
+                            <span class="study-technology">
+                                {{ study.technology }}
+                            </span>
+
+                            <h2>
+                                {{ study.description }}
+                            </h2>
+
+                        </div>
+
+
+                        <strong>
+                            {{ study.hours }}h
+                        </strong>
+
+
+                        <form
+                            method="POST"
+                            action="{{ url_for(
+                                'studies.delete_study',
+                                study_id=study.id
+                            ) }}"
+                        >
+
+                            <button
+                                type="submit"
+                                class="danger-button"
+                                onclick="return confirm(
+                                    'Excluir este estudo?'
+                                );"
+                            >
+                                Excluir
+                            </button>
+
+                        </form>
+
+                    </article>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="empty-state">
+
+                <h2>
+                    Nenhum estudo registrado
+                </h2>
+
+                <p>
+                    Registre seu primeiro estudo.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+</div>
+
+{% endblock %}
