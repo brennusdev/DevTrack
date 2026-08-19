@@ -19,6 +19,10 @@ from app.routes.home import home_bp
 from app.routes.dashoboard import dashboard_bp
 from app.routes.projects import projects_bp
 from app.config import Config
+from app.routes.studies import studies_bp
+from app.routes.goals import goals_bp
+
+
 
 
 
