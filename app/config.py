@@ -1,35 +1,57 @@
 """
-Configurações centrais da aplicação DevTrack.
+Configurações centrais do DevTrack.
 
-Manter as configurações em um módulo separado
-evita espalhar valores de configuração pelo projeto.
+Este módulo concentra as configurações utilizadas
+pela aplicação.
+
+A partir da V3 também teremos as configurações
+relacionadas ao banco de dados.
 """
+
+import os
 
 
 class Config:
     """
     Configuração padrão da aplicação.
-
-    Esta classe será expandida nas próximas versões
-    para receber configurações de banco de dados,
-    autenticação, segurança e outros componentes.
     """
 
-    # Define uma chave secreta utilizada pelo Flask
-    # para recursos que dependem de segurança,
-    # como sessões e cookies assinados.
+    # --------------------------------------------------
+    # FLASK
+    # --------------------------------------------------
+
+    # Chave utilizada pelo Flask para recursos que
+    # dependem de assinatura e segurança.
     #
-    # IMPORTANTE:
-    # Em produção essa chave deverá vir de uma
-    # variável de ambiente e nunca ficar exposta
-    # diretamente no código-fonte.
-    SECRET_KEY = "devtrack-development-key"
+    # Nesta etapa ainda utilizamos um valor de
+    # desenvolvimento.
+    SECRET_KEY = os.getenv(
+        "SECRET_KEY",
+        "devtrack-development-key",
+    )
 
     # Ativa o modo de desenvolvimento.
-    #
-    # Durante o desenvolvimento isso facilita
-    # a identificação de erros.
-    #
-    # Mais adiante vamos separar corretamente
-    # desenvolvimento e produção.
     DEBUG = True
+
+
+    # --------------------------------------------------
+    # DATABASE
+    # --------------------------------------------------
+
+    # Define onde o banco SQLite será armazenado.
+    #
+    # SQLite é um banco de dados relacional que funciona
+    # através de um arquivo.
+    #
+    # Para a V3 ele é excelente porque não precisamos
+    # instalar ou configurar um servidor de banco.
+    SQLALCHEMY_DATABASE_URI = os.getenv(
+        "DATABASE_URL",
+        "sqlite:///devtrack.db",
+    )
+
+    # Desativa o sistema antigo de rastreamento de
+    # modificações do Flask-SQLAlchemy.
+    #
+    # Isso reduz consumo desnecessário de memória.
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
