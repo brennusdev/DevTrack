@@ -52,3 +52,10 @@ def create_app():
 
     # Retornamos a aplicação pronta para ser executada.
     return app
+
+from models import (
+    Project,
+    Study,
+    Goal,
+    Activity,
+)
