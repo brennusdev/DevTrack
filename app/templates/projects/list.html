@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+
+{% block title %}
+    DevTrack | Projetos
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-container">
+
+    <!--
+        Cabeçalho da página.
+    -->
+
+    <header class="page-header">
+
+        <div>
+
+            <span class="eyebrow">
+                GERENCIAMENTO
+            </span>
+
+            <h1>
+                Projetos
+            </h1>
+
+            <p>
+                Gerencie os projetos que fazem parte
+                da sua evolução.
+            </p>
+
+        </div>
+
+
+        <!--
+            Link para criação de um novo projeto.
+        -->
+
+        <a
+            href="{{ url_for('projects.create_project') }}"
+            class="primary-button"
+        >
+            Novo projeto
+        </a>
+
+    </header>
+
+
+    <!--
+        Lista de projetos.
+    -->
+
+    <section class="data-card">
+
+        {% if projects %}
+
+            <div class="table-wrapper">
+
+                <table class="data-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Projeto
+                            </th>
+
+                            <th>
+                                Tecnologia
+                            </th>
+
+                            <th>
+                                Progresso
+                            </th>
+
+                            <th>
+                                Ações
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        {% for project in projects %}
+
+                            <tr>
+
+                                <td>
+
+                                    <strong>
+                                        {{ project.name }}
+                                    </strong>
+
+                                </td>
+
+
+                                <td>
+                                    {{ project.technology }}
+                                </td>
+
+
+                                <td>
+
+                                    <div class="table-progress">
+
+                                        <div class="progress-bar">
+
+                                            <div
+                                                class="progress-bar-fill"
+                                                style="width: {{ project.progress }}%;"
+                                            ></div>
+
+                                        </div>
+
+                                        <span>
+                                            {{ project.progress }}%
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="action-group">
+
+                                        <a
+                                            href="{{ url_for(
+                                                'projects.edit_project',
+                                                project_id=project.id
+                                            ) }}"
+                                            class="action-link"
+                                        >
+                                            Editar
+                                        </a>
+
+
+                                        <form
+                                            method="POST"
+                                            action="{{ url_for(
+                                                'projects.delete_project',
+                                                project_id=project.id
+                                            ) }}"
+                                        >
+
+                                            <button
+                                                type="submit"
+                                                class="danger-button"
+                                                onclick="return confirm(
+                                                    'Deseja realmente excluir este projeto?'
+                                                );"
+                                            >
+                                                Excluir
+                                            </button>
+
+                                        </form>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        {% else %}
+
+            <div class="empty-state">
+
+                <h2>
+                    Nenhum projeto encontrado
+                </h2>
+
+                <p>
+                    Crie seu primeiro projeto para começar
+                    a acompanhar sua evolução.
+                </p>
+
+                <a
+                    href="{{ url_for('projects.create_project') }}"
+                    class="primary-button"
+                >
+                    Criar projeto
+                </a>
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+</div>
+
+{% endblock %}
