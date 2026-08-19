@@ -40,52 +40,48 @@
         </div>
 
 
-        <!-- Navegação principal -->
-        <nav class="sidebar-navigation">
+       <nav class="sidebar-navigation">
 
-            <a
-                href="{{ url_for('dashboard.dashboard') }}"
-                class="nav-item active"
-            >
-                Dashboard
-            </a>
-
-
-            <a
-                href="#"
-                class="nav-item"
-            >
-                Estudos
-            </a>
+    <a
+        href="{{ url_for('dashboard.dashboard') }}"
+        class="nav-item"
+    >
+        Dashboard
+    </a>
 
 
-            <a
-                href="#"
-                class="nav-item"
-            >
-                Projetos
-            </a>
+    <a
+        href="{{ url_for('studies.list_studies') }}"
+        class="nav-item"
+    >
+        Estudos
+    </a>
 
 
-            <a
-                href="#"
-                class="nav-item"
-            >
-                Metas
-            </a>
+    <a
+        href="{{ url_for('projects.list_projects') }}"
+        class="nav-item"
+    >
+        Projetos
+    </a>
 
 
-            <a
-                href="#"
-                class="nav-item"
-            >
-                Atividades
-            </a>
+    <a
+        href="{{ url_for('goals.list_goals') }}"
+        class="nav-item"
+    >
+        Metas
+    </a>
 
-        </nav>
 
-    </aside>
+    <a
+        href="#"
+        class="nav-item"
+    >
+        Atividades
+    </a>
 
+</nav>
 
     <!--
         =================================================
