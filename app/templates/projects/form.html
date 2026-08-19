@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+    {% if project %}
+        DevTrack | Editar projeto
+    {% else %}
+        DevTrack | Novo projeto
+    {% endif %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-container">
+
+    <header class="page-header">
+
+        <div>
+
+            <span class="eyebrow">
+                PROJETOS
+            </span>
+
+            <h1>
+
+                {% if project %}
+                    Editar projeto
+                {% else %}
+                    Novo projeto
+                {% endif %}
+
+            </h1>
+
+        </div>
+
+    </header>
+
+
+    <section class="form-card">
+
+        <form
+            method="POST"
+            class="devtrack-form"
+        >
+
+            <!--
+                Campo de nome.
+            -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    Nome do projeto
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value="{% if project %}{{ project.name }}{% endif %}"
+                    placeholder="Ex.: DevTrack"
+                    required
+                >
+
+            </div>
+
+
+            <!--
+                Campo de tecnologia.
+            -->
+
+            <div class="form-group">
+
+                <label for="technology">
+                    Tecnologia principal
+                </label>
+
+                <input
+                    type="text"
+                    id="technology"
+                    name="technology"
+                    value="{% if project %}{{ project.technology }}{% endif %}"
+                    placeholder="Ex.: Python"
+                    required
+                >
+
+            </div>
+
+
+            <!--
+                Campo de progresso.
+            -->
+
+            <div class="form-group">
+
+                <label for="progress">
+                    Progresso
+                </label>
+
+                <input
+                    type="number"
+                    id="progress"
+                    name="progress"
+                    min="0"
+                    max="100"
+                    value="{% if project %}{{ project.progress }}{% else %}0{% endif %}"
+                    required
+                >
+
+                <span class="form-help">
+                    Informe um valor entre 0 e 100.
+                </span>
+
+            </div>
+
+
+            <!--
+                Ações.
+            -->
+
+            <div class="form-actions">
+
+                <a
+                    href="{{ url_for('projects.list_projects') }}"
+                    class="secondary-button"
+                >
+                    Cancelar
+                </a>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    {% if project %}
+                        Salvar alterações
+                    {% else %}
+                        Criar projeto
+                    {% endif %}
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</div>
+
+{% endblock %}
