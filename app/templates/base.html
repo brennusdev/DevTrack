@@ -52,6 +52,52 @@
         Área principal da aplicação.
     -->
     <main class="container">
+        <main class="container">
+
+    <!--
+        =================================================
+        FLASH MESSAGES
+        =================================================
+
+        O Flask utiliza flash() para enviar mensagens
+        temporárias para a interface.
+
+        Exemplos:
+
+        - operação realizada com sucesso;
+        - erro de validação;
+        - aviso para o usuário.
+    -->
+
+    {% with messages = get_flashed_messages(
+        with_categories=true
+    ) %}
+
+        {% if messages %}
+
+            <div class="flash-container">
+
+                {% for category, message in messages %}
+
+                    <div class="flash-message {{ category }}">
+
+                        {{ message }}
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% endif %}
+
+    {% endwith %}
+
+
+    {% block content %}
+    {% endblock %}
+
+</main>
 
         <!--
             Cada página poderá inserir seu conteúdo
