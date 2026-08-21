@@ -358,3 +358,4 @@ def delete_project(project_id):
     return redirect(
         url_for("projects.list_projects")
     )
+    
