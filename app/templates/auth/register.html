@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    DevTrack | Cadastro
+{% endblock %}
+
+
+{% block content %}
+
+<div class="auth-container">
+
+    <section class="auth-card">
+
+        <div class="auth-header">
+
+            <span class="eyebrow">
+                DEVTRACK
+            </span>
+
+            <h1>
+                Criar conta
+            </h1>
+
+            <p>
+                Crie sua conta para começar
+                a acompanhar sua evolução.
+            </p>
+
+        </div>
+
+
+        <form
+            method="POST"
+            class="devtrack-form"
+        >
+
+            <!-- Nome -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    Nome
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Seu nome"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="voce@email.com"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Senha -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    minlength="8"
+                    placeholder="Mínimo de 8 caracteres"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button"
+            >
+                Criar conta
+            </button>
+
+        </form>
+
+
+        <p class="auth-footer">
+
+            Já possui uma conta?
+
+            <a
+                href="{{ url_for('auth.login') }}"
+            >
+                Entrar
+            </a>
+
+        </p>
+
+    </section>
+
+</div>
+
+{% endblock %}
