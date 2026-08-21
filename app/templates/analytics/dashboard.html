@@ -1,0 +1,428 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+    DevTrack | Analytics
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-container">
+
+    <!--
+        =================================================
+        CABEÇALHO
+        =================================================
+    -->
+
+    <header class="page-header">
+
+        <div>
+
+            <span class="eyebrow">
+                ANALYTICS
+            </span>
+
+            <h1>
+                Performance
+            </h1>
+
+            <p>
+                Acompanhe sua evolução através
+                dos dados registrados no DevTrack.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!--
+        =================================================
+        SCORE PRINCIPAL
+        =================================================
+    -->
+
+    <section class="analytics-score-card">
+
+        <div>
+
+            <span class="eyebrow">
+                PERFORMANCE GERAL
+            </span>
+
+            <h2>
+                {{ productivity.productivity_score }}%
+            </h2>
+
+            <p>
+                Índice baseado no progresso dos
+                projetos e metas.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!--
+        =================================================
+        MÉTRICAS DE PROJETOS
+        =================================================
+    -->
+
+    <section class="metrics-grid">
+
+        <article class="metric-card">
+
+            <span>
+                Projetos
+            </span>
+
+            <strong>
+                {{ project_metrics.total }}
+            </strong>
+
+        </article>
+
+
+        <article class="metric-card">
+
+            <span>
+                Projetos concluídos
+            </span>
+
+            <strong>
+                {{ project_metrics.completed }}
+            </strong>
+
+        </article>
+
+
+        <article class="metric-card">
+
+            <span>
+                Projetos ativos
+            </span>
+
+            <strong>
+                {{ project_metrics.active }}
+            </strong>
+
+        </article>
+
+
+        <article class="metric-card">
+
+            <span>
+                Progresso médio
+            </span>
+
+            <strong>
+                {{ project_metrics.average_progress }}%
+            </strong>
+
+        </article>
+
+    </section>
+
+
+    <!--
+        =================================================
+        MÉTRICAS DE ESTUDOS
+        =================================================
+    -->
+
+    <section>
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    ESTUDOS
+                </span>
+
+                <h2>
+                    Aprendizado
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="metrics-grid">
+
+            <article class="metric-card">
+
+                <span>
+                    Sessões
+                </span>
+
+                <strong>
+                    {{ study_metrics.total_sessions }}
+                </strong>
+
+            </article>
+
+
+            <article class="metric-card">
+
+                <span>
+                    Horas estudadas
+                </span>
+
+                <strong>
+                    {{ study_metrics.total_hours }}h
+                </strong>
+
+            </article>
+
+
+            <article class="metric-card">
+
+                <span>
+                    Média por sessão
+                </span>
+
+                <strong>
+                    {{ study_metrics.average_hours }}h
+                </strong>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!--
+        =================================================
+        MÉTRICAS DE METAS
+        =================================================
+    -->
+
+    <section>
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    METAS
+                </span>
+
+                <h2>
+                    Objetivos
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="metrics-grid">
+
+            <article class="metric-card">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    {{ goal_metrics.total }}
+                </strong>
+
+            </article>
+
+
+            <article class="metric-card">
+
+                <span>
+                    Concluídas
+                </span>
+
+                <strong>
+                    {{ goal_metrics.completed }}
+                </strong>
+
+            </article>
+
+
+            <article class="metric-card">
+
+                <span>
+                    Pendentes
+                </span>
+
+                <strong>
+                    {{ goal_metrics.pending }}
+                </strong>
+
+            </article>
+
+
+            <article class="metric-card">
+
+                <span>
+                    Progresso médio
+                </span>
+
+                <strong>
+                    {{ goal_metrics.average_progress }}%
+                </strong>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!--
+        =================================================
+        PROGRESSO DOS PROJETOS
+        =================================================
+    -->
+
+    <section class="data-card analytics-projects">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    PROJETOS
+                </span>
+
+                <h2>
+                    Progresso
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        {% if project_progress %}
+
+            <div class="analytics-project-list">
+
+                {% for project in project_progress %}
+
+                    <div class="analytics-project">
+
+                        <div class="analytics-project-header">
+
+                            <strong>
+                                {{ project.name }}
+                            </strong>
+
+                            <span>
+                                {{ project.progress }}%
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-bar-fill"
+                                style="width: {{ project.progress }}%;"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="empty-state">
+
+                <p>
+                    Ainda não existem projetos
+                    suficientes para gerar métricas.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+</div>
+
+{% endblock %}
+<section class="data-card analytics-projects">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                TIMELINE
+            </span>
+
+            <h2>
+                Atividade recente
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    {% if recent_activities %}
+
+        <div class="activity-list">
+
+            {% for activity in recent_activities %}
+
+                <article class="activity-item">
+
+                    <div>
+
+                        <strong>
+                            {{ activity.title }}
+                        </strong>
+
+                        <p>
+                            {{ activity.description }}
+                        </p>
+
+                    </div>
+
+                    <span>
+                        {{ activity.created_at.strftime(
+                            "%d/%m/%Y"
+                        ) }}
+                    </span>
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-state">
+
+            <p>
+                Nenhuma atividade registrada.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+</section>
