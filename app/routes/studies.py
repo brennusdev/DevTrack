@@ -11,8 +11,8 @@ from flask import (
     url_for,
 )
 
-from database.db import db
-from models import Study
+from app.database.db import db
+from app.models import Study
 
 
 studies_bp = Blueprint(
@@ -122,9 +122,9 @@ def create_study():
 
         # Criamos o objeto.
         study = Study(
-            technology = tecnologia,
-            hours= hora,
-            description= descrição
+            technology=technology,
+            hours=hours,
+            description=description,
         )
 
 
