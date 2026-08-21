@@ -11,8 +11,8 @@ from flask import (
     url_for,
 )
 
-from database.db import db
-from models import Goal
+from app.database.db import db
+from app.models import Goal
 
 
 goals_bp = Blueprint(
@@ -70,9 +70,9 @@ def create_goal():
 
 
         goal = Goal(
-            title= title,
-            progress= 0,
-            completed= False,
+            title=title,
+            progress=0,
+            completed=False,
         )
 
 
