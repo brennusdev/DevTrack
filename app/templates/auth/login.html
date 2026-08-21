@@ -1,0 +1,68 @@
+@auth_bp.route(
+    "/login",
+    methods=["GET", "POST"],
+)
+def login():
+    """
+    Realiza o login de um usuário existente.
+    """
+
+    if request.method == "POST":
+
+        email = request.form.get(
+            "email",
+            "",
+        ).strip().lower()
+
+        password = request.form.get(
+            "password",
+            "",
+        )
+
+
+        # Procuramos o usuário.
+        user = find_user_by_email(
+            email
+        )
+
+
+        # Verificamos usuário e senha.
+        if (
+            user is None
+            or not user.check_password(password)
+        ):
+
+            flash(
+                "Email ou senha inválidos.",
+                "error",
+            )
+
+            return render_template(
+                "auth/login.html"
+            )
+
+
+        # --------------------------------------------------
+        # CRIAÇÃO DA SESSÃO
+        # --------------------------------------------------
+
+        session.clear()
+
+
+        session["user_id"] = user.id
+
+
+        flash(
+            "Login realizado com sucesso!",
+            "success",
+        )
+
+
+        return redirect(
+            url_for("dashboard.dashboard")
+        )
+
+
+    return render_template(
+        "auth/login.html"
+    )
