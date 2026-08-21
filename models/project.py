@@ -6,7 +6,7 @@ no banco de dados.
 """
 
 from datetime import datetime
-
+from models.user import User
 from database.db import db
 
 
@@ -81,4 +81,16 @@ class Project(db.Model):
             f"id={self.id} "
             f"name={self.name!r}>"
         )
+        
+user_id = db.Column(
+    db.Integer,
+    db.ForeignKey(
+        "user.id"
+    ),
+    nullable=False,
+)
+user = db.relationship(
+    User,
+    backref="projects",
+)
         
