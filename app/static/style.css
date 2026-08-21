@@ -1572,3 +1572,258 @@ RESPONSIVIDADE
     }
 
 }
+/*
+=========================================================
+ANALYTICS
+=========================================================
+*/
+
+.analytics-score-card {
+
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.analytics-score-card h2 {
+
+    font-size: 52px;
+
+    margin: 10px 0;
+
+}
+
+
+.analytics-score-card p {
+
+    color: #6b7280;
+
+    margin: 0;
+
+}
+
+
+/*
+=========================================================
+GRID DE MÉTRICAS
+=========================================================
+*/
+
+.metrics-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.metric-card {
+
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+}
+
+
+.metric-card span {
+
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.metric-card strong {
+
+    font-size: 30px;
+
+}
+
+
+/*
+=========================================================
+SEÇÕES
+=========================================================
+*/
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 30px 0 18px;
+
+}
+
+
+.section-heading h2 {
+
+    margin: 8px 0 0;
+
+}
+
+
+/*
+=========================================================
+PROJETOS NO ANALYTICS
+=========================================================
+*/
+
+.analytics-projects {
+
+    margin-top: 30px;
+
+}
+
+
+.analytics-project-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+
+.analytics-project-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+}
+
+
+.analytics-project-header span {
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+}
+
+
+/*
+=========================================================
+RESPONSIVIDADE
+=========================================================
+*/
+
+@media (max-width: 900px) {
+
+    .metrics-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .metrics-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .analytics-score-card h2 {
+
+        font-size: 40px;
+
+    }
+
+}
+/*
+=========================================================
+ATIVIDADES
+=========================================================
+*/
+
+.activity-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.activity-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #f3f4f6;
+
+}
+
+
+.activity-item:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.activity-item p {
+
+    margin: 5px 0 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+}
+
+
+.activity-item > span {
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+}
