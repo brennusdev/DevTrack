@@ -27,6 +27,7 @@ from app.routes.goals import goals_bp
 
 
 
+
 def create_app():
     """
     Cria uma nova instância da aplicação Flask.
