@@ -22,6 +22,7 @@ from app.config import Config
 from app.routes.studies import studies_bp
 from app.routes.goals import goals_bp
 from app.routes.analytics import analytics_bp
+from app.routes.health import health_bp
 
 
 
@@ -68,3 +69,7 @@ from models import (
     Goal,
     Activity,
 )
+from .middleware.logging import (
+    configure_logging,
+)
+
