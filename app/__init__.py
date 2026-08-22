@@ -69,6 +69,7 @@ from models import (
     Goal,
     Activity,
 )
+
 from middleware.logging import (
     configure_logging,
 )
