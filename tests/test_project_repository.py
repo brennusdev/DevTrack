@@ -45,11 +45,11 @@ def test_get_projects_by_user(app):
         # PROJETO
         # ----------------------------------------------
 
-        project = Project(
-            name="DevTrack",
-            technology="Python",
-            progress=50,
-            user_id=user.id,
+        project = Project (
+            nome ="DevTrack",
+            technologia="Python",
+            progresso =" 50",
+            user_id= "user.id",
         )
 
 
