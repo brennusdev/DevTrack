@@ -10,7 +10,7 @@ from flask import (
 )
 
 
-from .database.db import db
+from database.db import db
 
 
 health_bp = Blueprint(
