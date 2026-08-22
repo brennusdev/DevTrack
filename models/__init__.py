@@ -5,6 +5,9 @@ Importar os modelos neste arquivo facilita garantir
 que o SQLAlchemy conheça todas as tabelas antes
 da criação do banco.
 """
+"""
+Middlewares utilizados pelo DevTrack.
+"""
 from models.user import User  
 
 from models.project import Project
