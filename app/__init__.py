@@ -44,11 +44,13 @@ def create_app():
     # --------------------------------------------------
     # Imports dentro da função evitam importação circular.
     from app.routes.home import home_bp
-    from app.routes.dashoboard import dashboard_bp
+    from app.routes.dashboard import dashboard_bp
     from app.routes.projects import projects_bp
     from app.routes.goals import goals_bp
     from app.routes.analytics import analytics_bp
     from app.routes.health import health_bp
+    from app.routes.studies import studies_bp
+    from app.routes.auth import auth_bp
 
     app.register_blueprint(home_bp)
     app.register_blueprint(dashboard_bp)
@@ -56,6 +58,8 @@ def create_app():
     app.register_blueprint(goals_bp)
     app.register_blueprint(analytics_bp)
     app.register_blueprint(health_bp)
+    app.register_blueprint(studies_bp)
+    app.register_blueprint(auth_bp)
 
     # --------------------------------------------------
     # ERROR HANDLERS
