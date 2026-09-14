@@ -1,3 +1,16 @@
+"""
+Serviço de analytics do DevTrack.
+"""
+from sqlalchemy import func
+
+from database.db import db
+
+from models import (
+    Project,
+    Goal,
+)
+
+
 def get_project_progress():
     """
     Retorna os projetos com seus respectivos

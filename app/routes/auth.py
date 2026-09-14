@@ -102,7 +102,10 @@ def login():
     )
 
 
-@auth_bp.route("/logout")
+@auth_bp.route(
+    "/register",
+    methods=["GET", "POST"],
+)
 def register():
     """
     Realiza o cadastro de um novo usuário.
