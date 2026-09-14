@@ -13,7 +13,7 @@ from werkzeug.security import (
     check_password_hash,
 )
 
-from app.database.db import db
+from database.db import db
 
 
 class User(db.Model):
