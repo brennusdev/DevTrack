@@ -5,11 +5,10 @@ Rotas relacionadas ao Dashboard.
 from flask import Blueprint, render_template
 
 from database.db import db
-from models import Study
+from models import (
     Project,
     Study,
     Goal,
-    Activity,
     Activity,
 )
 
