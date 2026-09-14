@@ -41,7 +41,7 @@
     -->
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}"
+        href="{{ url_for('static', filename='style.css') }}"
     >
 
 </head>
@@ -52,7 +52,6 @@
         Área principal da aplicação.
     -->
     <main class="container">
-        <main class="container">
 
     <!--
         =================================================
@@ -99,15 +98,8 @@
 
 </main>
 
-        <!--
-            Cada página poderá inserir seu conteúdo
-            dentro deste bloco.
-        -->
-        {% block content %}
-        {% endblock %}
-
-    </main>
+    <footer>Feito por Brenno Pereira</footer>
 
 </body>
-<footer> Feito por Brenno Pereira <footer>
+
 </html>
