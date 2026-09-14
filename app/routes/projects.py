@@ -55,7 +55,9 @@ def list_projects():
         "projects/list.html",
         projects=projects,
     )
-    @projects_bp.route("/create", methods=["GET", "POST"])
+
+
+@projects_bp.route("/create", methods=["GET", "POST"])
 def create_project():
     """
     Cria um novo projeto.
@@ -187,7 +189,9 @@ def create_project():
         "projects/form.html",
         project=None,
     )
-    @projects_bp.route(
+
+
+@projects_bp.route(
     "/<int:project_id>/edit",
     methods=["GET", "POST"],
 )
