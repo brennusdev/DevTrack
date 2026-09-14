@@ -7,8 +7,32 @@ Este módulo contém:
 - login;
 - logout.
 """
-from flask import session
-@auth_bp].route(
+from flask import (
+    Blueprint,
+    flash,
+    redirect,
+    render_template,
+    request,
+    session,
+    url_for,
+)
+
+from database.db import db
+
+from services.auth import (
+    create_user,
+    find_user_by_email,
+)
+
+
+auth_bp = Blueprint(
+    "auth",
+    __name__,
+    url_prefix="/auth",
+)
+
+
+@auth_bp.route(
     "/login",
     methods=["GET", "POST"],
 )
@@ -77,34 +101,8 @@ def login():
         "auth/login.html"
     )
 
-from flask import (
-    Blueprint,
-    flash,
-    redirect,
-    render_template,
-    request,
-    url_for,
-)
 
-from database.db import db
-
-from services.auth import (
-    create_user,
-    find_user_by_email,
-)
-
-
-auth_bp = Blueprint(
-    "auth",
-    __name__,
-    url_prefix="/auth",
-)
-
-
-@auth_bp.route(
-    "/register",
-    methods=["GET", "POST"],
-)
+@auth_bp.route("/logout")
 def register():
     """
     Realiza o cadastro de um novo usuário.
