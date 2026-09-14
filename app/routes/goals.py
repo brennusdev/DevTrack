@@ -11,8 +11,8 @@ from flask import (
     url_for,
 )
 
-from app.database.db import db
-from app.models import Goal
+from database.db import db
+from models import Goal
 
 
 goals_bp = Blueprint(

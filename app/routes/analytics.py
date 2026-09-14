@@ -9,7 +9,7 @@ from flask import (
 )
 
 
-from .analytics import (
+from app.services.analytics import (
     get_project_metrics,
     get_project_progress,
     get_study_metrics,
